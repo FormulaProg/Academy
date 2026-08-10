@@ -1,473 +1,826 @@
-/* Фон усього сайту */
+/* ==========================================
+   RESET
+========================================== */
+
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-family: "Times New Roman", Times, serif;
 }
 
-img {
-    width: auto;
-    height: 60px;
-}
+
+/* ==========================================
+   BODY — ФОН УСЬОГО САЙТУ
+========================================== */
 
 body {
+    min-height: 100vh;
     background: linear-gradient(to bottom, #312e2e, #0e0007);
+    color: #f2f2f2;
 }
 
-/* HEADER */
+
+/* ==========================================
+   HEADER
+========================================== */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     width: 100%;
+    min-height: 70px;
+
+    padding: 5px 2%;
+
     background: linear-gradient(to right, #ce3434, #433d3d);
-    padding: 0 1%;
 }
+
+
+/* Ліва частина шапки */
+
+.header_left {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* Логотип */
+
+.header_left img:first-child {
+    width: auto;
+    height: 60px;
+}
+
+
+/* Напис Formula<Prog> */
+
+.header_left img:last-child {
+    width: auto;
+    height: 42px;
+}
+
+
+/* Якщо в майбутньому додаси посилання в header */
 
 .header_link {
     color: #f2f2f2;
     font-size: 25px;
 }
 
-.header_left {
-    display: flex;
-    align-items: center;
-    color: #f2f2f2;
-    font-size: 30px;
-    letter-spacing: 5px;
-}
 
-#logo-text {
-    padding-left: 10px;
-}
+/* ==========================================
+   MAIN
+========================================== */
 
-/* MAIN */
 main {
     display: flex;
     flex-direction: column;
+
     width: 70%;
-    background-color: #433d3d;
+    min-height: 100vh;
+
     margin: 0 15%;
     padding: 0 5%;
+
+    background-color: #433d3d;
     color: #f2f2f2;
-    min-height: 100vh;
 }
+
+
+/* ==========================================
+   MAIN TITLE
+========================================== */
 
 #courses-title {
     font-size: 40px;
+
     padding-top: 30px;
     padding-bottom: 30px;
+
     text-align: center;
 }
 
-/* TITLE */
+
+/* ==========================================
+   BIG TITLE BLOCK
+========================================== */
+
 #courses-title1 {
-    font-size: 40px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
     position: relative;
-    width: 100%;
-    height: 200px;
-    border-radius: 15px;
-    border: 3px solid #c33232;
-    overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    height: 200px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    border: 3px solid #c33232;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    font-size: 40px;
+    text-align: center;
+
     background:
         radial-gradient(
             circle,
-            rgba(180,40,40,0.9) 0%,
-            rgba(70,60,60,0.8) 95%
+            rgba(180, 40, 40, 0.9) 0%,
+            rgba(70, 60, 60, 0.8) 95%
         );
+
     transition: 0.3s;
 }
 
-/* SEARCH BLOCK */
+
+/* ==========================================
+   SEARCH BLOCK
+========================================== */
+
 #search_block {
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 25px;
 }
 
-/* INPUT */
+
+/* ==========================================
+   SEARCH INPUT
+========================================== */
+
 #name_course {
     width: 55%;
 }
 
+
 #name_course_input {
     width: 100%;
     height: 45px;
+
     padding-left: 15px;
-    background: #615c5c;
+
+    background-color: #615c5c;
     color: #f2f2f2;
+
     font-size: 22px;
+
     border: 2px solid black;
+    outline: none;
 }
 
-/* DROPDOWN */
+
+#name_course_input::placeholder {
+    color: #d0d0d0;
+}
+
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
 .language-menu {
     position: relative;
     display: inline-block;
+
+    width: 280px;
 }
 
-/* BUTTON */
+
+/* ==========================================
+   DROPDOWN BUTTON
+========================================== */
+
 #language_programming {
-    width: 280px;
+    width: 100%;
     height: 45px;
+
     font-size: 22px;
-    border: black 3px solid;
+
+    border: 3px solid black;
+    border-radius: 25px;
+
     background-color: #615c5c;
     color: #f2f2f2;
-    border-radius: 25px;
+
     cursor: pointer;
+
     transition: 0.3s;
 }
+
 
 #language_programming:hover {
-    background-color: #615c5c;
+    background-color: #706a6a;
 }
 
-/* MENU */
+
+/* ==========================================
+   DROPDOWN MENU
+========================================== */
+
 .dropdown {
     position: absolute;
+
     top: 110%;
     left: 0;
+
     width: 100%;
-    background: #615c5c;
+
+    background-color: #615c5c;
+
     border: 3px solid black;
     border-radius: 15px;
+
     overflow: hidden;
+
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(-10px);
+
     transition: 0.3s;
+
     z-index: 100;
 }
 
-/* SHOW MENU */
+
+/* Показ меню */
+
 .language-menu:hover .dropdown {
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
 }
 
-/* ITEMS */
+
+/* ==========================================
+   DROPDOWN ITEMS
+========================================== */
+
 .dropdown a {
     display: block;
+
     padding: 15px;
+
     color: white;
+
     font-size: 20px;
+
     transition: 0.2s;
 }
 
-/* HOVER */
+
 .dropdown a:hover {
-    background: #433d3d;
+    background-color: #433d3d;
 }
 
-/* ACTIVE FILTER */
+
+/* Активний фільтр */
+
 .dropdown a.active-filter {
-    background: #c33232;
+    background-color: #c33232;
+
     color: white;
+
     font-weight: bold;
 }
 
-/* COURSES */
+
+/* ==========================================
+   COURSES GRID
+========================================== */
+
 .courses {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 40px;
+
     padding: 0 10%;
+
     margin-bottom: 40px;
+
     text-align: center;
-    
 }
 
-/* CARD */
+
+/* ==========================================
+   COURSE CARD
+========================================== */
+
 .course-card {
     position: relative;
-    width: 100%;
-    height: 170px;
-    border-radius: 15px;
-    border: 3px solid #c33232;
-    overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    height: 170px;
+
+    border: 3px solid #c33232;
+    border-radius: 15px;
+
+    overflow: hidden;
+
     background:
         radial-gradient(
             circle,
-            rgba(180,40,40,0.9) 0%,
-            rgba(70,60,60,0.8) 95%
+            rgba(180, 40, 40, 0.9) 0%,
+            rgba(70, 60, 60, 0.8) 95%
         );
+
+    transition: 0.3s;
 }
+
+
+/* ==========================================
+   COURSE CARD 1
+========================================== */
 
 .course-card1 {
     position: relative;
-    width: 100%;
-    height: 170px;
-    border-radius: 15px;
-    border: 3px solid #c33232;
-    overflow: hidden;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    height: 170px;
+
+    border: 3px solid #c33232;
+    border-radius: 15px;
+
+    overflow: hidden;
+
     background:
         radial-gradient(
             circle,
-            rgba(180,40,40,0.9) 0%,
-            rgba(70,60,60,0.8) 95%
+            rgba(180, 40, 40, 0.9) 0%,
+            rgba(70, 60, 60, 0.8) 95%
         );
 }
 
-.course-card1 img{
+
+/* ==========================================
+   COURSE CARD IMAGES
+========================================== */
+
+.course-card img {
     position: absolute;
-    width: 140px;
-    height: auto;
+
+    height: 150px;
+    width: auto;
+
     opacity: 0.2;
+
     z-index: 1;
 }
+
+
+.course-card1 img {
+    position: absolute;
+
+    width: 140px;
+    height: auto;
+
+    opacity: 0.2;
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   COURSE CARD TITLES
+========================================== */
+
+.course-card h2 {
+    position: relative;
+
+    color: white;
+
+    font-size: 25px;
+
+    z-index: 2;
+}
+
 
 .course-card1 h2 {
     position: relative;
+
     color: white;
+
     font-size: 32px;
+
     z-index: 2;
 }
 
-/* HOVER */
-.course-card:hover{
+
+/* ==========================================
+   CARD HOVER
+========================================== */
+
+.course-card:hover,
+.course-card1:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 0, 0.5);
 }
 
-/* IMAGE */
-.course-card img{
-    position: absolute;
-    height: 150px;
-    width: auto;
-    opacity: 0.2;
-    z-index: 1;
-}
-/* TEXT */
-.course-card h2 {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    z-index: 2;
-}
+
+/* ==========================================
+   COURSE TEXT
+========================================== */
 
 .course-text {
     font-size: 20px;
 }
 
-code {
-    font-family: Consolas, monospace;
-    font-size: 18px;
-}
-
-pre {
-    background-color: #1A1A1A;
-    color: #d4d4d4;
-    padding: 5px;
-    margin: 10px auto;
-    border-radius: 10px;
-    width: 100%;
-    overflow-x: auto;
-    font-family: Consolas, monospace;
-}
 
 .course-text1 {
     font-size: 25px;
+
     margin-top: 30px;
 }
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.text-color {
+    color: #f2f2f2;
+}
+
 
 p:not(pre) {
     text-align: justify;
     text-justify: inter-word;
 }
 
-.text-color {
-    color: #f2f2f2;
+
+/* ==========================================
+   CODE
+========================================== */
+
+code {
+    font-family: Consolas, monospace;
+
+    font-size: 18px;
 }
+
+
+pre {
+    width: 100%;
+
+    margin: 10px auto;
+    padding: 5px;
+
+    background-color: #1a1a1a;
+    color: #d4d4d4;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+    font-family: Consolas, monospace;
+}
+
+
+/* ==========================================
+   DETAILS / SUMMARY
+========================================== */
 
 summary {
     cursor: pointer;
 }
 
-a.text-color:hover{
-    color: #db1d1d;
-}
 
 /* ==========================================
-   АДАПТИВНІСТЬ (Responsive Design)
-   ========================================== */
+   LINKS
+========================================== */
 
-/* Планшет: 768px - 1024px */
+a.text-color:hover {
+    color: #c33232;
+}
+
+
+/* ==========================================
+   TABLET
+   768px — 1024px
+========================================== */
+
 @media (max-width: 1024px) {
+
     main {
         width: 90%;
+
         margin: 0 5%;
+
         padding: 0 4%;
     }
 
+
+    /* Header */
+
+    header {
+        padding: 5px 2%;
+    }
+
+
+    .header_left img:first-child {
+        height: 55px;
+    }
+
+
+    .header_left img:last-child {
+        height: 38px;
+    }
+
+
+    /* Courses */
+
     .courses {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 25px;
+
         padding: 0 5%;
     }
+
+
+    /* Titles */
 
     #courses-title {
         font-size: 32px;
     }
 
+
+    #courses-title1 {
+        font-size: 32px;
+    }
+
+
+    /* Search */
+
     #language_programming {
         width: 220px;
+
         font-size: 18px;
     }
+
 
     #name_course_input {
         font-size: 18px;
     }
 }
 
-/* Мобільний: до 768px */
+
+/* ==========================================
+   MOBILE
+   до 768px
+========================================== */
+
 @media (max-width: 768px) {
-    /* Хедер */
+
+    /* HEADER */
+
     header {
+        min-height: 60px;
+
         padding: 5px 10px;
     }
 
+
     .header_left {
-        font-size: 20px;
-        letter-spacing: 2px;
+        gap: 7px;
     }
 
-    img {
-        width: 50px;
+
+    .header_left img:first-child {
+        height: 50px;
     }
 
-    /* Основний контент */
+
+    .header_left img:last-child {
+        height: 32px;
+    }
+
+
+    /* MAIN */
+
     main {
         width: 100%;
+
         margin: 0;
+
         padding: 0 4%;
     }
 
+
+    /* TITLE */
+
     #courses-title {
         font-size: 26px;
+
         padding-top: 20px;
         padding-bottom: 20px;
     }
 
+
     #courses-title1 {
-        font-size: 26px;
         height: 140px;
+
+        font-size: 26px;
     }
 
-    /* Пошук */
+
+    /* SEARCH */
+
     #search_block {
         flex-direction: column;
+
         gap: 12px;
+
         align-items: stretch;
     }
+
 
     #name_course {
         width: 100%;
     }
 
+
     #name_course_input {
-        font-size: 16px;
         height: 42px;
+
+        font-size: 16px;
     }
+
+
+    /* DROPDOWN */
 
     .language-menu {
         width: 100%;
     }
 
+
     #language_programming {
         width: 100%;
-        font-size: 16px;
+
         height: 42px;
+
+        font-size: 16px;
+
         border-radius: 12px;
     }
+
 
     .dropdown {
         width: 100%;
     }
 
+
     .dropdown a {
-        font-size: 16px;
         padding: 12px;
+
+        font-size: 16px;
     }
 
-    /* Сітка курсів — 1 колонка */
+
+    /* COURSES */
+
     .courses {
         grid-template-columns: 1fr;
+
         gap: 18px;
+
         padding: 0;
     }
+
 
     .course-card {
         height: 130px;
     }
 
+
     .course-card h2 {
         font-size: 20px;
     }
+
 
     .course-card img {
         height: 110px;
     }
 
+
+    .course-card1 {
+        height: 130px;
+    }
+
+
     .course-card1 h2 {
         font-size: 24px;
     }
+
 
     .course-card1 img {
         width: 110px;
     }
 
-    /* Текст курсу */
+
+    /* COURSE TEXT */
+
     .course-text {
         font-size: 16px;
     }
 
+
     .course-text1 {
         font-size: 20px;
+
         margin-top: 20px;
     }
+
+
+    /* CODE */
 
     code {
         font-size: 14px;
     }
 
+
     pre {
         font-size: 13px;
+
         padding: 8px;
     }
 }
 
-/* Дуже малий екран: до 420px */
+
+/* ==========================================
+   VERY SMALL SCREEN
+   до 420px
+========================================== */
+
 @media (max-width: 420px) {
-    .header_left {
-        font-size: 16px;
-        letter-spacing: 1px;
+
+    /* HEADER */
+
+    header {
+        min-height: 55px;
+
+        padding: 5px 8px;
     }
 
-    img {
-        width: 40px;
+
+    .header_left {
+        gap: 5px;
     }
+
+
+    .header_left img:first-child {
+        height: 40px;
+    }
+
+
+    .header_left img:last-child {
+        height: 27px;
+    }
+
+
+    /* TITLE */
 
     #courses-title {
         font-size: 22px;
     }
 
+
+    /* CARDS */
+
+    .course-card h2 {
+        font-size: 17px;
+    }
+
+
+    .course-card1 h2 {
+        font-size: 20px;
+    }
+}
     .course-card h2 {
         font-size: 17px;
     }
