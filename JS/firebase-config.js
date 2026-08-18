@@ -5,13 +5,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/fireba
 import { getDatabase, ref, runTransaction, get } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBGDyvM-V3SYTh8mLqWU9CBBjP-NxYbQOw",
-    authDomain: "fcp-academy.firebaseapp.com",
-    databaseURL: "https://fcp-academy-default-rtdb.firebaseio.com",
-    projectId: "fcp-academy",
-    storageBucket: "fcp-academy.firebasestorage.app",
-    messagingSenderId: "641271454489",
-    appId: "1:641271454489:web:3f150c8f7cdb07117ec388"
+    apiKey: "AIzaSyDuA-AaD4IDNCLJmY7xjYmi4zqXMFHw3CU",
+    authDomain: "formulaprog-d64f8.firebaseapp.com",
+    databaseURL: "https://formulaprog-d64f8-default-rtdb.firebaseio.com",
+    projectId: "formulaprog-d64f8",
+    storageBucket: "formulaprog-d64f8.firebasestorage.app",
+    messagingSenderId: "661710844962",
+    appId: "1:661710844962:web:0aeb83ae7ddf0a45f1067b"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -22,7 +22,7 @@ const db = getDatabase(app);
 // ==========================
 // Заміни на своє власне довге поєднання літер+цифр.
 // Нікому його не показуй і не публікуй.
-const OWNER_KEY = "Simplylovely";
+const OWNER_KEY = "Simply3lovely3";
 
 // Перевіряє URL поточної сторінки щоразу наново.
 // Нічого нікуди не зберігається (ні localStorage, ні cookie) —
