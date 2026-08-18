@@ -861,3 +861,4 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCoursePage();
     initFilters();
 });
+
