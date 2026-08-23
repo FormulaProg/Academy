@@ -52,19 +52,10 @@ header {
 
 /* Логотип */
 
-.header_left img:first-child {
+.header_left img{
     width: auto;
-    height: 70px;
+    height: 100px;
 }
-
-
-/* Напис Formula<Prog> */
-
-.header_left img:last-child {
-    width: auto;
-    height: 42px;
-}
-
 
 /* Якщо в майбутньому додаси посилання в header */
 
