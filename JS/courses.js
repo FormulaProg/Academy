@@ -200,7 +200,7 @@ sys.set_int_max_str_digits(n)</code></pre>
             <div class="course-text">
             <p>Раніше ми говорили про бібліотеку iostream, яка дозволяє вводити дані та їх виводити. Тож тепер з’ясуємо, що потрібно написати для введення та виведення даних у програмі.</p>
             <br>
-            <p class="course-text1">Для введення даних ми маємо ввести змінну з відповідним типом даних. А потім ми вводимо дані через <span class="text-color">cin</span> (command in). Наприклад:</p>
+            <p class="course-text1">Для введення даних ми маємо ввести змінну з відповідним типом даних. А потім ми вводимо дані через <span class="text-color">cin</span>. Наприклад:</p>
 <pre><code>#include&lt;iostream&gt;
 using namespace std; 
 int main(){
@@ -215,7 +215,7 @@ cin >> a >> b;</code></pre>
             <p>*Дані присвоюються у порядку, вказаному в cin.</p>
 
             <br><br>
-            <p class="course-text1">Для виведення даних ми використовуємо <span class="text-color">cout</span> (command out).  Наприклад:</p>
+            <p class="course-text1">Для виведення даних ми використовуємо <span class="text-color">cout</span>.  Наприклад:</p>
 <pre><code>cout << "Hello, World";</code></pre>
             <br>
             <p>Для виведення значення змінної достатньо вказати її назву. Для виведення декількох даних ми записуємо усе через <span class="text-color"> << </span>.</p>
