@@ -36,7 +36,7 @@ header {
 
     padding: 5px 2%;
 
-    background: linear-gradient(to right, #433d3d, #ce3434);
+    background: linear-gradient(to left, #ce3434, #433d3d);
 }
 
 
@@ -46,16 +46,17 @@ header {
     display: flex;
     align-items: center;
 
-    gap: 10px;
+    gap: 5px;
 }
 
 
-/* Логотип */
+/* Напис Formula<Prog> */
 
-.header_left img{
+.header_left img {
     width: auto;
-    height: 100px;
+    height: 40px;
 }
+
 
 /* Якщо в майбутньому додаси посилання в header */
 
@@ -89,7 +90,7 @@ main {
 ========================================== */
 
 #courses-title {
-    font-size: 35px;
+    font-size: 40px;
 
     padding-top: 30px;
     padding-bottom: 30px;
@@ -509,10 +510,6 @@ a.text-color:hover {
     color: #c33232;
 }
 
-.text-color {
-   color: #ce3434;
-}
-   
 
 /* ==========================================
    TABLET
@@ -537,13 +534,8 @@ a.text-color:hover {
     }
 
 
-    .header_left img:first-child {
-        height: 55px;
-    }
-
-
-    .header_left img:last-child {
-        height: 38px;
+    .header_left img {
+        height: 40px;
     }
 
 
@@ -602,17 +594,12 @@ a.text-color:hover {
 
 
     .header_left {
-        gap: 7px;
+        gap: 5px;
     }
 
 
-    .header_left img:first-child {
-        height: 50px;
-    }
-
-
-    .header_left img:last-child {
-        height: 32px;
+    .header_left img {
+        height: 30px;
     }
 
 
@@ -649,7 +636,7 @@ a.text-color:hover {
     #search_block {
         flex-direction: column;
 
-        gap: 12px;
+        gap: 5px;
 
         align-items: stretch;
     }
@@ -788,13 +775,8 @@ a.text-color:hover {
     }
 
 
-    .header_left img:first-child {
-        height: 40px;
-    }
-
-
-    .header_left img:last-child {
-        height: 27px;
+    .header_left img {
+        height: 20px;
     }
 
 
@@ -814,9 +796,5 @@ a.text-color:hover {
 
     .course-card1 h2 {
         font-size: 20px;
-    }
-}
-    .course-card h2 {
-        font-size: 17px;
     }
 }
