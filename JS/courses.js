@@ -829,7 +829,7 @@ function renderCoursePage() {
 
     if (course) {
         container.innerHTML = course.text;
-        document.title = `Formula&lt;Prog&gt; Academy - ${course.title}`;
+        document.title = `Formula<Prog> - ${course.title}`;
 
         // Підсвічуємо весь код, який щойно з'явився на сторінці
         if (window.hljs) {
