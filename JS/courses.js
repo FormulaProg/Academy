@@ -831,6 +831,13 @@ function renderCoursePage() {
         container.innerHTML = course.text;
         document.title = `FCP_Academy - ${course.title}`;
 
+        // Підсвічуємо весь код, який щойно з'явився на сторінці
+        if (window.hljs) {
+            container.querySelectorAll("pre code").forEach(block => {
+                hljs.highlightElement(block);
+            });
+        }
+
         // Блок лічильника переглядів
         const viewsBlock = document.createElement("div");
         viewsBlock.id = "views-counter";
@@ -862,4 +869,3 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCoursePage();
     initFilters();
 });
-
