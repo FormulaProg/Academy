@@ -829,11 +829,23 @@ function renderCoursePage() {
 
     if (course) {
         container.innerHTML = course.text;
-        document.title = `Formula<Prog> - ${course.title}`;
+        document.title = `FCP_Academy - ${course.title}`;
 
-        // Підсвічуємо весь код, який щойно з'явився на сторінці
+        // Підсвічуємо весь код, який щойно з'явився на сторінці.
+        // Мову вказуємо явно з course.language, бо автовизначення
+        // highlight.js плутає короткі шматки коду (напр. "//" в Python
+        // сприймає як коментар C++).
         if (window.hljs) {
+            const hljsLangMap = {
+                "C++": "cpp",
+                "Python": "python"
+            };
+            const hljsLang = hljsLangMap[course.language];
+
             container.querySelectorAll("pre code").forEach(block => {
+                if (hljsLang) {
+                    block.classList.add(`language-${hljsLang}`);
+                }
                 hljs.highlightElement(block);
             });
         }
