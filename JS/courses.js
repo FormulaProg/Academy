@@ -428,6 +428,7 @@ int main(){
 min(a,b) # мінімальне число
 max(a,b) # максимальне число
 round(a) # округлення до найближчого цілого числа</code></pre>
+                <p class="text-color">*Функція round() округлює <span>.5</span> до найближчого парного числа </p>
                 <br>
                 <p>Для наступних функцій ми імпортуємо бібліотеку <span class="text-color">math</span>.</p>
 <pre><code>math.sqrt(a) # корінь квадратний
