@@ -1,78 +1,28 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formula&lt;Prog&gt;</title>
-        <link rel="icon" href="images/logotype_black.png" type="image/png">
-        <meta name="description" content="Це веб-сайт який допомагає учням вивчати олімпіадне програмування легко" />
-        <meta name="keywords" content="Formula&lt;Prog&gt; , олімпіадне програмування, програмування, алгоритми, задачі з олімпіадного програмування, спортивне програмування" />
-        <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formula&lt;Prog&gt; Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/scale.js"></script>
+</head>
+<body class="home">
+  <main class="stage">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Formula&lt;Prog&gt; Academy"></a>
 
-        <!-- Підсвітка коду (highlight.js) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <div class="cards">
+      <a href="materials.html">Матеріали</a>
+      <a href="tasks.html">Задачі</a>
+    </div>
 
-        <script type="module" src="JS/courses.js"></script>
-    </head>
-
-    <body>
-
-        <header>
-            <header>
-                <div class="header_left">
-                    <img src="images/logotype_Academy.png" alt="Formula&lt;Prog&gt; Academy">
-                </div>
-            </header>
-        </header>
-
-        <hr>
-
-        <main>
-
-            <div id="courses-title">
-                Теми з олімпіадного програмування
-            </div>
-
-            <br>
-
-            <div id="search_block">
-
-                <form id="name_course">
-                    <input
-                        id="name_course_input"
-                        type="text"
-                        placeholder="Введіть назву теми..."
-                        maxlength="100"
-                    />
-                </form>
-
-                <!-- Dropdown -->
-                <div class="language-menu">
-
-                    <button id="language_programming">
-                        Мови програмування
-                    </button>
-
-                    <div class="dropdown">
-
-                        <a href="#" data-lang="all">Усі</a>
-
-                        <a href="#" data-lang="C++">C++</a>
-
-                        <a href="#" data-lang="Python">Python</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <br><br>
-
-            <!-- Курси (генеруються динамічно з JS/courses.js) -->
-            <div class="courses"></div>
-
-        </main>
-
-    </body>
+    <footer>
+      Зв'язок · <span class="email">formulaprog@email.com</span><br>
+      © 2026 Formula&lt;Prog&gt;
+    </footer>
+  </main>
+</body>
 </html>
