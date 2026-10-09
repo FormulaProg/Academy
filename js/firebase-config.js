@@ -20,13 +20,25 @@ const db = getDatabase(app);
 // ==========================
 // АВТОРСТВО — ТІЛЬКИ ЗА ПОСИЛАННЯМ, БЕЗ ЗБЕРЕЖЕННЯ
 // ==========================
-// Відкриваєш сайт із ?key=... — твої перегляди не рахуються.
-// Нічого нікуди не зберігається (ні localStorage, ні cookie).
+// Відкриваєш сайт із ?key=... — твої перегляди не рахуються на жодній
+// сторінці, поки не закриєш вкладку (див. js/owner.js).
+// localStorage і cookie не використовуються.
 const OWNER_KEY = "Simplylovely3";
 
 export function isOwner() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("key") === OWNER_KEY;
+  let key = params.get("key");
+
+  // ключ із першої сторінки зберігає js/owner.js (тільки на час вкладки)
+  if (!key) {
+    try {
+      key = sessionStorage.getItem("ownerKey");
+    } catch (error) {
+      key = null;
+    }
+  }
+
+  return key === OWNER_KEY;
 }
 
 // ==========================
